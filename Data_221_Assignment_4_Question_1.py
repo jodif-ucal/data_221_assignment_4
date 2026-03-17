@@ -2,20 +2,20 @@ from sklearn.datasets import load_breast_cancer
 
 breast_cancer_data = load_breast_cancer()
 
-feature_matrix = breast_cancer_data.data
-labels = breast_cancer_data.target
+feature_matrix_X = breast_cancer_data.data
+labels_y = breast_cancer_data.target
 
 def main():
     from numpy import count_nonzero
 
-    print("Shape of x:", feature_matrix.shape) #569 rows, 30 columns
-    print("Shape of y:", labels.shape) #569 rows, 1 column
+    print("Shape of x:", feature_matrix_X.shape) #569 rows, 30 columns
+    print("Shape of y:", labels_y.shape) #569 rows, 1 column
 
     #numpy.count_nonzero takes a numpy array as input as well as the number to search for and
     # returns the number of times the number appears in the array
     #Note: Benign is classed as 0 and malignant as class 1
-    print("Number of samples belonging to benign class:", count_nonzero(labels == 0))
-    print("Number of samples belonging to malignant class:", count_nonzero(labels == 1))
+    print("Number of samples belonging to benign class:", count_nonzero(labels_y == 0))
+    print("Number of samples belonging to malignant class:", count_nonzero(labels_y == 1))
 
 #If this script is directly ran, the main function will run
 #This way, we can import the data from here to other files without the print statements running again
