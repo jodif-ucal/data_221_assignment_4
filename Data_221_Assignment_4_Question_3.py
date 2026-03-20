@@ -25,7 +25,7 @@ def main():
         "importance": constrained_decision_tree.feature_importances_
     })
 
-    #Sort th values numerically by importance in descending order, and take the first 5
+    #Sort the values numerically by importance in descending order, and take the first 5
     print(
         "The 5 most important features from the decision tree:\n",
         features_and_importances.sort_values("importance", ascending=False).head(5)
@@ -34,4 +34,13 @@ def main():
 if __name__ == "__main__":
     main()
 
-#TODO: discussion
+#Controlling a model's complexity is essential to avoid overfitting, as if a model is not controlled,
+# then the model will start to effectively memorise the training data and will not be able to adapt
+# to rather unforeseen data.
+#In the case of a decision tree, not controlling the maximum depth of a model will increase the
+# complexity, which may be a problem as decision nodes may be overly specific to the training data
+
+#Features with a higher importance will be the ones that are looked first when classifying whether
+# someone is malignant or benign, as they are the most divisive ones, hence their high importance
+#Extracting the feature importance from a decision tree can tell us which features contribute the
+# most towards whether someone is of one classification or another
