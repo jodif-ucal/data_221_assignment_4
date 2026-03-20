@@ -7,11 +7,12 @@ import pandas as pd
 constrained_decision_tree = DecisionTreeClassifier(criterion='entropy', max_depth=4)
 constrained_decision_tree.fit(x_train, y_train)
 
+predicted_testing = constrained_decision_tree.predict(x_test)
+
 def main():
     predicted_training = constrained_decision_tree.predict(x_train)
     print("Accuracy on training set:", accuracy_score(y_train, predicted_training))
 
-    predicted_testing = constrained_decision_tree.predict(x_test)
     print("Accuracy on testing set:", accuracy_score(y_test, predicted_testing))
 
     print()
