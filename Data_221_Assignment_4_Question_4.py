@@ -38,14 +38,19 @@ neural_network_model.compile(loss="binary_crossentropy", metrics=["accuracy"])
 #Training the model with 15 epochs (repetitions)
 neural_network_model.fit(x_train, y_train, epochs=15)
 
-#Predicting labels for the testing and training data, and reporting the model's accuracy
-training_accuracy = neural_network_model.evaluate(x_train, y_train)
-testing_accuracy = neural_network_model.evaluate(x_test, y_test)
 
-#Printing the model's accuracy on the training and testing set
-# indexing by 1 as the loss of the model was also returned in a list
-print("Training accuracy:", training_accuracy[1])
-print("Testing accuracy:", testing_accuracy[1])
+def main():
+    # Predicting labels for the testing and training data, and reporting the model's accuracy
+    training_accuracy = neural_network_model.evaluate(x_train, y_train)
+    testing_accuracy = neural_network_model.evaluate(x_test, y_test)
+
+    # Printing the model's accuracy on the training and testing set
+    # indexing by 1 as the loss of the model was also returned in a list
+    print("Training accuracy:", training_accuracy[1])
+    print("Testing accuracy:", testing_accuracy[1])
+
+if __name__ == "__main__":
+    main()
 
 #Feature scaling is important with neural networks because some features will have a larger variation
 # between their data points than others, with the issue being that this larger variance will affect
