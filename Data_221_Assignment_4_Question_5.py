@@ -19,3 +19,10 @@ neural_network_confusion_matrix = confusion_matrix(
 print("Decision tree confusion matrix:\n", decision_tree_confusion_matrix, "\n")
 print("Neural network confusion matrix:\n", neural_network_confusion_matrix)
 
+#For a task like this, I would prefer a Decision tree. This is because, for a problem like breast
+# cancer, a decision tree will be able to capture hidden patterns between someone who is malignant
+# and someone who is benign. A neural network is not designed to figure out what features are more
+# important than others, however, as it takes all of them into account.
+#We can see this reflected in each model's confusion matrix, as the decision tree managed to flag
+# two more data points as true positives compared to the neural network, minimising the false
+# negatives flagged, which is very important in the context of breast cancer.
