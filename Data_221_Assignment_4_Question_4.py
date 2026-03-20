@@ -49,6 +49,11 @@ def main():
     print("Training accuracy:", training_accuracy[1])
     print("Testing accuracy:", testing_accuracy[1])
 
+#This is for question 5
+def get_y_pred():
+    y_pred = neural_network_model.predict(x_test)
+    return y_pred
+
 if __name__ == "__main__":
     main()
 
