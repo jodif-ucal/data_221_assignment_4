@@ -39,3 +39,15 @@ cnn_model.fit(
 #Getting and printing the test accuracy
 test_loss, test_acc = cnn_model.evaluate(X_test, y_test, verbose=0)
 print("Test accuracy:", test_acc)
+
+#CNNs are preferred over fully connected networks for image data, and this is because in oder to use
+# the connected networks, the image will have to be flattened into a single long vector, meaning
+# the model will not know which pixels are next to which and there will be a large number of neurons
+# in the input layer alone, which will make the regular models slower and at risk of overfitting on
+# any training data it sees.
+#CNNs in contrast are able to sense patterns within an image and can combine these patterns into larger
+# patterns and classify what is what accordingly using these patterns.
+
+#The convolutional layer in this task is identifying some of the patterns that are present in fashion
+# clothing, such as the handles of a bag and its general shape, before eventually building up to a larger,
+# more complex shape, such as the bag itself.
