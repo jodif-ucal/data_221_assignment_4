@@ -1,0 +1,41 @@
+from tensorflow.keras.datasets import fashion_mnist
+from tensorflow.keras.models import Sequential
+from tensorflow.keras import layers
+
+(X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
+
+#Normalising the pixels to be between [0,1]
+X_train = X_train / 255.0
+X_test = X_test / 255.0
+
+#Reshaping the image so that the CNN will be able to understand it
+X_train = X_train[..., None]
+X_test = X_test[..., None]
+
+#Buidling the model
+cnn_model = Sequential([
+    layers.Input(shape=(28, 28, 1)),
+    layers.Conv2D(16, 3, padding="same", activation="relu"),
+    layers.MaxPool2D()
+])
+cnn_model.add(layers.Flatten())
+cnn_model.add(layers.Dense(128, activation="relu"))
+cnn_model.add(layers.Dropout(0.3)) #randomly drop 30% of nodes during training
+cnn_model.add(layers.Dense(10, activation="softmax")) #Output layer
+cnn_model.summary()
+
+#Compiling the model
+cnn_model.compile(
+    optimizer="adam",
+    loss="sparse_categorical_crossentropy",
+    metrics=["accuracy"]
+)
+
+#Training the model on the training data
+cnn_model.fit(
+    X_train, y_train, validation_split=0.1, epochs=15, batch_size=64
+)
+
+#Getting and printing the test accuracy
+test_loss, test_acc = cnn_model.evaluate(X_test, y_test, verbose=0)
+print("Test accuracy:", test_acc)
