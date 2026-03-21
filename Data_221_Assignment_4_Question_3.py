@@ -39,7 +39,8 @@ if __name__ == "__main__":
 # then the model will start to effectively memorise the training data and will not be able to adapt
 # to rather unforeseen data.
 #In the case of a decision tree, not controlling the maximum depth of a model will increase the
-# complexity, which may be a problem as decision nodes may be overly specific to the training data
+# complexity, which may be a problem as decision nodes may be overly specific to the training data,
+# especially when continuous data is used
 
 #Features with a higher importance will be the ones that are looked first when classifying whether
 # someone is malignant or benign, as they are the most divisive ones, hence their high importance
