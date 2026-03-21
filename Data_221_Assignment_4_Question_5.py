@@ -26,3 +26,14 @@ print("Neural network confusion matrix:\n", neural_network_confusion_matrix)
 #We can see this reflected in each model's confusion matrix, as the decision tree managed to flag
 # two more data points as true positives compared to the neural network, minimising the false
 # negatives flagged, which is very important in the context of breast cancer.
+
+#Advantage of decision trees: Able to identify the key features that goes into a certain classification,
+# which can be useful outside a machine learning context
+#Disadvantage of decision trees: Tend to overfitting, which will require careful management of them,
+# which is why there are many hyperparameters to do so
+
+#Advantage of neural networks: Versatile model that can work with many types of problems, including
+# both classification (binary or multi-classification) and regression problems, and even image
+# recognition
+#Disadvantage of neural networks: Difficult to understand as we won't know why a model chooses certain
+# weights and biases for each node, making it black box-like
