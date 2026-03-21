@@ -1,6 +1,10 @@
 from tensorflow.keras.datasets import fashion_mnist
 from tensorflow.keras.models import Sequential
+from tensorflow.random import set_seed
 from tensorflow.keras import layers
+
+#setting a random seed in order to obtain consistent results
+set_seed(1)
 
 (X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
 
