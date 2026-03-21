@@ -33,6 +33,8 @@ for index in index_of_misclassified_images:
     plt.title(f"True label: {y_test[index]}; predicted label: {predicted_labels[index]}")
     plt.show()
 
+print("The displayed images can be found in Question-7-images")
+
 #One thing all the misclassified labels have in common is some sort of semicircle-like pattern present,
 # with it being at the top of the object in images 1 and 3, and being further down in image 2
 
