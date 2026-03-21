@@ -36,9 +36,14 @@ cnn_model.fit(
     X_train, y_train, validation_split=0.1, epochs=15, batch_size=64
 )
 
-#Getting and printing the test accuracy
-test_loss, test_acc = cnn_model.evaluate(X_test, y_test, verbose=0)
-print("Test accuracy:", test_acc)
+
+def main():
+    # Getting and printing the test accuracy
+    test_loss, test_acc = cnn_model.evaluate(X_test, y_test, verbose=0)
+    print("Test accuracy:", test_acc)
+
+if __name__ == "__main__":
+    main()
 
 #CNNs are preferred over fully connected networks for image data, and this is because in oder to use
 # the connected networks, the image will have to be flattened into a single long vector, meaning
