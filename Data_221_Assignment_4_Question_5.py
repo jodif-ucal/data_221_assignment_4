@@ -4,7 +4,7 @@ import Data_221_Assignment_4_Question_3 as decision_tree
 from Data_221_Assignment_4_Question_4 import get_y_pred
 
 #Calculating the decision tree matrix for predicted testing
-decision_tree_confusion_matrix = confusion_matrix(decision_tree.predicted_testing, y_test)
+decision_tree_confusion_matrix = confusion_matrix(y_test, decision_tree.predicted_testing, labels=[0,1])
 
 #Using the get_y_pred function from Question 4 to create the confusion matrix
 #Note here that .astype(int) here is converting any predicted classification greater than 0.5
@@ -12,7 +12,7 @@ decision_tree_confusion_matrix = confusion_matrix(decision_tree.predicted_testin
 # classification that is greater than 0.5 is effectively 1.
 #.astype() is from numpy and pandas
 neural_network_confusion_matrix = confusion_matrix(
-    (get_y_pred() >= 0.5).astype(int), y_test
+    y_test, (get_y_pred() >= 0.5).astype(int), labels=[0,1]
 )
 
 #printing each model's respective confusion matrix
