@@ -22,7 +22,6 @@ cnn_model.add(layers.Flatten())
 cnn_model.add(layers.Dense(128, activation="relu"))
 cnn_model.add(layers.Dropout(0.3)) #randomly drop 30% of nodes during training
 cnn_model.add(layers.Dense(10, activation="softmax")) #Output layer
-cnn_model.summary()
 
 #Compiling the model
 cnn_model.compile(
@@ -39,6 +38,7 @@ cnn_model.fit(
 
 def main():
     # Getting and printing the test accuracy
+    cnn_model.summary()
     test_loss, test_acc = cnn_model.evaluate(X_test, y_test, verbose=0)
     print("Test accuracy:", test_acc)
 
